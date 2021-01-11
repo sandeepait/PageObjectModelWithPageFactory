@@ -4,6 +4,7 @@ import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
@@ -21,12 +22,15 @@ public class CurtainsPage extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	
+	@CacheLookup
 	@FindBy(xpath="(//div[@id='product_list']//a[@class='whishlist_ic']/following-sibling::a)[1]")
 	WebElement firstProduct;
 	
+	@CacheLookup
 	@FindBy(id="add_cart")
 	WebElement btn_addToCart;
 	
+	@CacheLookup
 	@FindBy(xpath="//div[@id='snackbar']")
 	WebElement productAddedMsg;
 	

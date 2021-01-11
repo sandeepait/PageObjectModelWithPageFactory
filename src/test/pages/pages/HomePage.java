@@ -4,6 +4,7 @@ import java.util.Set;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -15,12 +16,15 @@ public class HomePage {
 		PageFactory.initElements(driver, this);	
 	}
 	
+	@CacheLookup
 	@FindBy(xpath="//div[@class='moe-button-wrapper']/button[1]")
 	WebElement btn_dontAllow;
 	
+	@CacheLookup
 	@FindBy(xpath="//a[text()='Home & Kitchen']")
 	WebElement	link_homeAndKitchen;
 	
+	@CacheLookup
 	@FindBy(xpath="//ul[@class='list_blocks']//a[text()='Curtains']")
 	WebElement link_curtains;
 	
